@@ -23,7 +23,7 @@
 }
 
 @media (prefers-color-scheme: light) {
-  .page.theme_light {   
+  .page.theme_light {
     --background-color: #FFF1F7;
     --background-image: url(../images/cover-image-light.png);
     --text-color: #353430;
@@ -33,7 +33,7 @@
     --focus-color: #FFC2E6;
     --focus-shadow-color: #FF0070;
     --shadow-color: #F1B2CE;
-    --border-color: #353430; 
+    --border-color: #353430;
     --color-rec: #FFF1F7;
     }
 }
