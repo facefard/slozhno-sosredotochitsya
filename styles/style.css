@@ -1,5 +1,334 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+:root {
+  --header-height: 768px;
+  --focus-size: 157px;
+  --header-text-width: 491px;
+  --flex-gap: 80px;
+  --grid-gap: 20px;
+  --rec-right: 29px;
+  --rec-top: 21px;
+}
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background: var(--background-color);
+}
+
+.header {
+  background-image: var(--background-image);
+  background-size: cover;
+  min-height: var(--header-height);
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+}
+
+/* Верхний правый угол */
+.decorated-zone::before {
+  top: var(--grid-gap);
+  right: var(--grid-gap);
+  border-top: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+}
+
+/* Нижний левый угол */
+.decorated-zone::after {
+  bottom: var(--grid-gap);
+  left: var(--grid-gap);
+  border-bottom: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+}
+
+.header__theme-menu-decoration {
+  position: absolute;
+  text-transform: uppercase;
+  display: flex ;
+  align-items: center;
+  top: var(--rec-top);
+  right: var(--rec-right);
+  color: var(--color-rec);
+  text-align: center;
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25px; 
+}
+
+.header__theme-menu-decoration::after {
+  content: "";
+  width: 10px; 
+  height: 10px; 
+  background-color: var(--color-rec); 
+  filter: drop-shadow(0px 0px 4px var(--color-rec));
+  border-radius: 50%; 
+  margin-left: 10px; 
+}
+
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  list-style: none;
+  padding-top: 20px;
+}
+
+.header__theme-menu-button {
+  color: var(--color-subject-text);
+  text-align: center;
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  background-color: transparent;
+  border: none;
+  text-transform: lowercase;
+  width: 70px;
+  height: 26px;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--border-color);
+  pointer-events: none
+}
+
+.header__theme-menu-button:hover {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: 1px solid var(--border-color);
+}
+
+.header__title {
+  color: var(--focus-color);
+  text-shadow: 4px 4px 0px var(--focus-shadow-color);
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
+  font-size: var(--focus-size);
+  font-weight: 700;
+  line-height: 82.5%;
+}
+
+.header__text-right {
+  justify-self: right;
+  padding-right: var(--grid-gap);
+}
+
+.header__text {
+  background-color: var(--background-text-color);
+  color: var(--color-title-text);
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  max-width: 491px;
+}
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  gap: var(--flex-gap);
+  padding: var(--grid-gap);
+}
+
+.cover__box-column {
+  display: grid;
+  grid-template-columns: 0.98fr 2.02fr;
+  gap: var(--grid-gap);
+}
+
+.cover__box-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--grid-gap);
+}
+
+.cover__subject {
+  color: var(--color-subject-text);
+  grid-row-start: 1;
+  grid-row-end: span 6;
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+}
+
+.cover__subject-row {
+  color: var(--color-subject-text);
+  grid-column-start: 1;
+  grid-column-end: span 3;
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  width: 32%;
+}
+
+
+.cover__title {
+  background-color: var(--background-text-color);
+  color: var(--color-title-text);
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.cover__subject-theme {
+  color: var(--color-title-text);
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  background-color: var(--background-text-color);
+}
+
+.cover__subject-title {
+  color: var(--color-title-text);
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  background-color: var(--background-text-color);
+  margin-bottom: 10px;
+}
+
+.cover__text {
+  color: var(--text-color);
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+}
+
+.images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr, 1fr, 1fr;
+  gap: var(--grid-gap);
+}
+
+.img1 {
+  padding-top: var(--grid-gap);
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+}
+
+.img2 {
+  padding-top: var(--grid-gap);
+  grid-column: 3 / 4;
+  grid-row: 1 / 3;
+}
+
+.img3 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 4;
+}
+
+.img4 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.img5 {
+  grid-column: 2 / 4;
+  grid-row: 3 / 4;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.footer {
+  height: 768px;
+  display: flex;
+  align-items: center;
+}
+
+.footer__title {
+  color: var(--focus-color);
+  text-shadow: 2px 2px 0px var(--focus-shadow-color);
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
+  font-size: var(--focus-size);
+  font-weight: 700;
+  line-height: 82.5%;
+  text-align: center;
+  margin: auto;
+}
+
+.link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0px var(--shadow-color);
+}
+
+@media (width < 1024px) {
+  :root {
+    --header-height: 1024px;
+    --focus-size: 120px;
+    --header-text-width: 364px;
+    --flex-gap: 80px;
+    --grid-gap: 20px;
+  }
+
+  .header__theme-menu {
+    justify-self: right;
+    align-self: center;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: column;
+  }
+
+  .cover__box-row {
+    grid-template-columns: auto;
+  }
+
+  .cover__subject-row {
+    grid-column-end: span 1;
+  }
+}
+
+@media (width < 768px) {
+  :root {
+    --header-height: 668px;
+    --focus-size: 116px;
+    --header-text-width: 355px;
+    --flex-gap: 50px;
+    --grid-gap: 10px;
+    --rec-right: 19px;
+    --rec-top: 11px;
+  }
+
+  .cover__box-column {
+    grid-template-columns: auto;
+  }
+
+  .cover__subject {
+    grid-row-end: span 1;
+  }
+
+  .images {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .img2 {
+    padding: 0;
+  }
 }
