@@ -1,15 +1,4 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-:root {
-  --header-height: 768px;
-  --focus-size: 157px;
-  --header-text-width: 491px;
-  --flex-gap: 80px;
-  --grid-gap: 20px;
-  --rec-right: 29px;
-  --rec-top: 21px;
-  --main-gap: 60px;
-  --dist: 20px;
-}
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
@@ -102,15 +91,15 @@
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--border-color);
-  pointer-events: none
-}
-
-.header__theme-menu-button:hover {
-  border-bottom: 1px solid var(--border-color);
+  outline: 1px solid var(--border-color);
+  pointer-events: none;
 }
 
 .header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header__theme-menu-button:hover {
   outline: 1px solid var(--border-color);
 }
 
@@ -230,38 +219,38 @@
   gap: var(--dist);
 }
 
-.img__scenery {
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img:nth-child(1) {
   padding-top: var(--dist);
   grid-column: 1 / 3;
   grid-row: 1 / 2;
 }
 
-.img__icecream {
+.img:nth-child(2) {
   padding-top: var(--dist);
   grid-column: 3 / 4;
   grid-row: 1 / 3;
 }
 
-.img__cassette {
+.img:nth-child(3) {
   grid-column: 1 / 2;
   grid-row: 2 / 4;
 }
 
-.img__books {
+.img:nth-child(4) {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
 }
 
-.img__street {
+.img:nth-child(5) {
   padding-top: 5px;
   grid-column: 2 / 4;
   grid-row: 3 / 4;
-}
-
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .footer {
@@ -284,6 +273,14 @@ img {
 .link {
   text-decoration: none;
   text-shadow: 2px 2px 0px var(--shadow-color);
+}
+
+.link:hover {
+  border-bottom: 1px solid var(--text-color);
+}
+
+.link:focus-visible {
+  outline: 1px solid var(--text-color);
 }
 
 @media (width < 1024px) {
@@ -318,7 +315,7 @@ img {
     grid-column-end: span 1;
   }
 
-  .img__street {
+  .img:nth-child(5) {
     padding: 0;
   }
 }
@@ -357,7 +354,7 @@ img {
     flex-direction: column;
   }
 
-  .img__icecream {
+  .img:nth-child(2) {
     padding: 0;
   }
 }

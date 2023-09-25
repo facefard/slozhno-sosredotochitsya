@@ -14,6 +14,13 @@
   --shadow-color: #FF0070;
   --border-color: #FF0070;
   --color-rec: #FF0070;
-
-  
+  --header-height: 768px;
+  --focus-size: 157px;
+  --header-text-width: 491px;
+  --flex-gap: 80px;
+  --grid-gap: 20px;
+  --rec-right: 29px;
+  --rec-top: 21px;
+  --main-gap: 60px;
+  --dist: 20px;
 }
