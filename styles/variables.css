@@ -24,3 +24,28 @@
   --main-gap: 60px;
   --dist: 20px;
 }
+
+@media (width < 1024px) {
+  :root {
+    --header-height: 1024px;
+    --focus-size: 120px;
+    --header-text-width: 364px;
+    --flex-gap: 80px;
+    --grid-gap: 20px;
+    --dist: 20px;
+  }
+}
+
+@media (width < 768px) {
+  :root {
+    --header-height: 668px;
+    --focus-size: 116px;
+    --header-text-width: 355px;
+    --flex-gap: 50px;
+    --grid-gap: 20px;
+    --dist: 10px;
+    --rec-right: 19px;
+    --rec-top: 11px;
+    --main-gap: 40px;
+  }
+}
