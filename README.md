@@ -1,1 +1,1 @@
-https://github.com/facefard/slozhno-sosredotochitsya.git
+https://facefard.github.io/slozhno-sosredotochitsya/
