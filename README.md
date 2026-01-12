@@ -1,9 +1,7 @@
 ## Features
 
-- Gradient-based design
-- UI animations
-- Image effects
 - Light / Dark theme switching
-- Responsive layout for different screen sizes
+- Responsive layout for different devices
+- CSS Grid layout for structured and flexible page composition
 
 https://facefard.github.io/slozhno-sosredotochitsya/
